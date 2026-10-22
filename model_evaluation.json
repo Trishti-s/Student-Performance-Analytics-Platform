@@ -1,0 +1,308 @@
+{
+  "metadata": {
+    "dataset_name": "AI-Data.csv (xAPI-Edu-Data)",
+    "total_samples": 480,
+    "train_size": 336,
+    "test_size": 144,
+    "train_ratio": 0.7,
+    "test_ratio": 0.3,
+    "random_state": 42,
+    "class_encoding": {
+      "0": "H (High, Grade >= 90)",
+      "1": "L (Low, Grade < 70)",
+      "2": "M (Medium, Grade 70-89)"
+    },
+    "feature_names": [
+      "raisedhands",
+      "VisITedResources",
+      "Discussion",
+      "StudentAbsenceDays"
+    ],
+    "feature_encoding": {
+      "StudentAbsenceDays": {
+        "0": "Above-7",
+        "1": "Under-7"
+      }
+    },
+    "test_class_distribution": {
+      "H": 31,
+      "L": 45,
+      "M": 68
+    },
+    "dataset_class_distribution": {
+      "H": 142,
+      "L": 127,
+      "M": 211
+    },
+    "evaluation_methodology": "Strict 70/30 train/test holdout evaluation with random_state=42. Models are trained exclusively on 336 instances and evaluated on 144 held-out instances. Target classes are mapped consistently (H=0, L=1, M=2). Metrics are never computed from ad-hoc single user inputs."
+  },
+  "models": {
+    "Decision Tree": {
+      "accuracy": 0.6806,
+      "precision_macro": 0.6767,
+      "recall_macro": 0.721,
+      "f1_macro": 0.6815,
+      "precision_weighted": 0.7017,
+      "recall_weighted": 0.6806,
+      "f1_weighted": 0.6736,
+      "per_class": {
+        "H": {
+          "precision": 0.5217,
+          "recall": 0.7742,
+          "f1_score": 0.6234,
+          "support": 31
+        },
+        "L": {
+          "precision": 0.7692,
+          "recall": 0.8889,
+          "f1_score": 0.8247,
+          "support": 45
+        },
+        "M": {
+          "precision": 0.7391,
+          "recall": 0.5,
+          "f1_score": 0.5965,
+          "support": 68
+        }
+      },
+      "confusion_matrix": [
+        [
+          24,
+          0,
+          7
+        ],
+        [
+          0,
+          40,
+          5
+        ],
+        [
+          22,
+          12,
+          34
+        ]
+      ]
+    },
+    "Random Forest": {
+      "accuracy": 0.7222,
+      "precision_macro": 0.7143,
+      "recall_macro": 0.7254,
+      "f1_macro": 0.7184,
+      "precision_weighted": 0.7278,
+      "recall_weighted": 0.7222,
+      "f1_weighted": 0.7239,
+      "per_class": {
+        "H": {
+          "precision": 0.5833,
+          "recall": 0.6774,
+          "f1_score": 0.6269,
+          "support": 31
+        },
+        "L": {
+          "precision": 0.8409,
+          "recall": 0.8222,
+          "f1_score": 0.8315,
+          "support": 45
+        },
+        "M": {
+          "precision": 0.7188,
+          "recall": 0.6765,
+          "f1_score": 0.697,
+          "support": 68
+        }
+      },
+      "confusion_matrix": [
+        [
+          21,
+          0,
+          10
+        ],
+        [
+          0,
+          37,
+          8
+        ],
+        [
+          15,
+          7,
+          46
+        ]
+      ]
+    },
+    "Logistic Regression": {
+      "accuracy": 0.6875,
+      "precision_macro": 0.7115,
+      "recall_macro": 0.6273,
+      "f1_macro": 0.6469,
+      "precision_weighted": 0.7042,
+      "recall_weighted": 0.6875,
+      "f1_weighted": 0.6764,
+      "per_class": {
+        "H": {
+          "precision": 0.6471,
+          "recall": 0.3548,
+          "f1_score": 0.4583,
+          "support": 31
+        },
+        "L": {
+          "precision": 0.8611,
+          "recall": 0.6889,
+          "f1_score": 0.7654,
+          "support": 45
+        },
+        "M": {
+          "precision": 0.6264,
+          "recall": 0.8382,
+          "f1_score": 0.717,
+          "support": 68
+        }
+      },
+      "confusion_matrix": [
+        [
+          11,
+          0,
+          20
+        ],
+        [
+          0,
+          31,
+          14
+        ],
+        [
+          6,
+          5,
+          57
+        ]
+      ]
+    },
+    "Perceptron": {
+      "accuracy": 0.6458,
+      "precision_macro": 0.6167,
+      "recall_macro": 0.623,
+      "f1_macro": 0.6119,
+      "precision_weighted": 0.6303,
+      "recall_weighted": 0.6458,
+      "f1_weighted": 0.6317,
+      "per_class": {
+        "H": {
+          "precision": 0.5,
+          "recall": 0.3548,
+          "f1_score": 0.4151,
+          "support": 31
+        },
+        "L": {
+          "precision": 0.7193,
+          "recall": 0.9111,
+          "f1_score": 0.8039,
+          "support": 45
+        },
+        "M": {
+          "precision": 0.6308,
+          "recall": 0.6029,
+          "f1_score": 0.6165,
+          "support": 68
+        }
+      },
+      "confusion_matrix": [
+        [
+          11,
+          0,
+          20
+        ],
+        [
+          0,
+          41,
+          4
+        ],
+        [
+          11,
+          16,
+          41
+        ]
+      ]
+    },
+    "MLP Classifier": {
+      "accuracy": 0.75,
+      "precision_macro": 0.7348,
+      "recall_macro": 0.755,
+      "f1_macro": 0.7427,
+      "precision_weighted": 0.7513,
+      "recall_weighted": 0.75,
+      "f1_weighted": 0.7482,
+      "per_class": {
+        "H": {
+          "precision": 0.6176,
+          "recall": 0.6774,
+          "f1_score": 0.6462,
+          "support": 31
+        },
+        "L": {
+          "precision": 0.82,
+          "recall": 0.9111,
+          "f1_score": 0.8632,
+          "support": 45
+        },
+        "M": {
+          "precision": 0.7667,
+          "recall": 0.6765,
+          "f1_score": 0.7188,
+          "support": 68
+        }
+      },
+      "confusion_matrix": [
+        [
+          21,
+          0,
+          10
+        ],
+        [
+          0,
+          41,
+          4
+        ],
+        [
+          13,
+          9,
+          46
+        ]
+      ]
+    }
+  },
+  "comparison": [
+    {
+      "model": "MLP Classifier",
+      "accuracy": 0.75,
+      "precision": 0.7513,
+      "recall": 0.75,
+      "f1_score": 0.7482
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.7222,
+      "precision": 0.7278,
+      "recall": 0.7222,
+      "f1_score": 0.7239
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.6875,
+      "precision": 0.7042,
+      "recall": 0.6875,
+      "f1_score": 0.6764
+    },
+    {
+      "model": "Decision Tree",
+      "accuracy": 0.6806,
+      "precision": 0.7017,
+      "recall": 0.6806,
+      "f1_score": 0.6736
+    },
+    {
+      "model": "Perceptron",
+      "accuracy": 0.6458,
+      "precision": 0.6303,
+      "recall": 0.6458,
+      "f1_score": 0.6317
+    }
+  ]
+}
